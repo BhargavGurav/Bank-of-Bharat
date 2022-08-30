@@ -130,16 +130,16 @@ def withdrawal(request):
                 data.save()
                 statement = f'Dear {current}, collect the cash'
                 messages.success(request, statement)
-                return render(request, 'profile.html')
+                return HttpResponseRedirect('/profile')
             else:
                 statement = f'Dear {current}, you do not have enough balance to proceed this request'
                 messages.info(request, statement)
-                return render(request, 'profile.html')
+                return HttpResponseRedirect('/profile')
         else:
             statement = 'Wrong password'
             messages.error(request, statement)
-            return render(request, 'profile.html')
-    return render(request, 'profile.html')
+            return HttpResponseRedirect('/profile')
+    return HttpResponseRedirect('/profile')
     
 
 @cache_control(no_cache=True, must_revalidade=True, no_store=True)
@@ -163,17 +163,17 @@ def send(request):
                 data.save()
                 statement = f'Dear {current}, amount is sent successfully'
                 messages.success(request, statement)
-                return render(request, 'profile.html')
+                return HttpResponseRedirect('/profile')
             else:
                 statement = f'Dear {current}, you do not have enough balance to proceed this request'
                 messages.info(request, statement)
-                return render(request, 'profile.html')
+                return HttpResponseRedirect('/profile')
         else:
             statement = 'Wrong data'
             messages.error(request, statement)
-            return render(request, 'profile.html')
+            return HttpResponseRedirect('/profile')
 
-    return render(request, 'profile.html')
+    return HttpResponseRedirect('/profile')
 
     
 
@@ -183,7 +183,7 @@ def balance_check(request):
     base = current.balance
     message = f'Your balance is {base}'
     messages.success(request, message)
-    return render(request, 'profile.html')
+    return HttpResponseRedirect('/profile')
 
 @cache_control(no_cache=True, must_revalidade=True, no_store=True)
 def deposite(request):
@@ -200,13 +200,13 @@ def deposite(request):
             data.save()
             statement = f"Money is deposited in {receiver} account successfully."
             messages.success(request, statement)
-            return render(request, 'profile.html')
+            return HttpResponseRedirect('/profile')
         else:
             statement = 'No user detected'
             messages.error(request, statement)
-            return render(request, 'profile.html')
+            return HttpResponseRedirect('/profile')
         
-    return render(request, 'profile.html')
+    return HttpResponseRedirect('/profile')
     
         
 @cache_control(no_cache=True, must_revalidade=True, no_store=True)
