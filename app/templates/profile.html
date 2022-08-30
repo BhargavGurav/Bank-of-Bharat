@@ -108,19 +108,19 @@
         <script>
             let mess = '{{ message }}';
             swal('Perfect !', mess, 'success');
-            window.location = '/profile';
+            {% comment %} window.location = '/profile'; {% endcomment %}
         </script>
         {% elif message.tags == 'error' %}
             <script>
-            l   et message = '{{ message }}';
+                let message = '{{ message }}';
                 swal('Denied !', message , 'error');
-                window.location = '/profile';
+                {% comment %} window.location = '/profile'; {% endcomment %}
             </script>
         {% else %}
         <script>
                 let message = '{{ message }}';
                 swal('Denied !', message , 'info');
-                window.location = '/profile';
+                {% comment %} window.location = '/profile'; {% endcomment %}
             </script>
         {% endif %}
     {% endfor %}
