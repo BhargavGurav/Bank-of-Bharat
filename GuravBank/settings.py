@@ -35,7 +35,7 @@ SECRET_KEY = 'django-insecure-t2h)a0st#nim&wc(rt4$%ruq8hhyz3ntfq7u9!b)2%fl(zl^7*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'guravbank.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'bankofbharat.herokuapp.com']
 
 # ALLOWED_HOSTS = ['*']
 
