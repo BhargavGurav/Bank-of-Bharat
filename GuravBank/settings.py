@@ -100,6 +100,8 @@ WSGI_APPLICATION = 'GuravBank.wsgi.application'
 #     }
 # }
 
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
